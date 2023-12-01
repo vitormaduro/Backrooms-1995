@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl7631px2yfih"]
+
+[ext_resource type="PackedScene" uid="uid://g0s46ae46okc" path="res://meshes/lamp.glb" id="1_wf70p"]
+[ext_resource type="AudioStream" uid="uid://doth85ci76786" path="res://assets/lamp/factory-fluorescent-light-buzz-6871.mp3" id="2_uxdkw"]
+
+[node name="lamp" instance=ExtResource("1_wf70p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127, -0.742269, 0.001)
+light_color = Color(0.670588, 0.811765, 0.839216, 1)
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 2.0
+distance_fade_shadow = 5.0
+distance_fade_length = 5.0
+omni_range = 20.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("2_uxdkw")
+unit_size = 0.5
+autoplay = true
+bus = &"Lamp"

@@ -1,0 +1,6 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://csuggiejssalw"]
+
+[ext_resource type="FontFile" uid="uid://b3qqqt1qs2si5" path="res://assets/ui/VCR_OSD_MONO_1.001.ttf" id="1_kcule"]
+
+[resource]
+font = ExtResource("1_kcule")

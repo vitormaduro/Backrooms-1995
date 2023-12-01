@@ -1,0 +1,182 @@
+[gd_scene load_steps=10 format=3 uid="uid://dy26vjyn6g6yq"]
+
+[ext_resource type="Script" path="res://assets/ui/UI.cs" id="1_4n1gs"]
+[ext_resource type="LabelSettings" uid="uid://csuggiejssalw" path="res://assets/ui/ui_font.tres" id="2_jmtxr"]
+[ext_resource type="Texture2D" uid="uid://byssitgi3r3sx" path="res://assets/ui/crosshair.png" id="3_oq1jb"]
+[ext_resource type="Texture2D" uid="uid://bjk6h2pnwti2n" path="res://assets/ui/rec.png" id="4_u8xgx"]
+[ext_resource type="Texture2D" uid="uid://dwggujmkhaudy" path="res://assets/ui/battery.png" id="5_dodk3"]
+[ext_resource type="FontFile" uid="uid://b3qqqt1qs2si5" path="res://assets/ui/VCR_OSD_MONO_1.001.ttf" id="6_qus56"]
+[ext_resource type="AudioStream" uid="uid://d3yurjjwc7o7n" path="res://assets/ui/tape-end.mp3" id="7_0bql8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rb3ss"]
+font = ExtResource("6_qus56")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wy6rs"]
+font = ExtResource("6_qus56")
+font_size = 50
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4n1gs")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="DateTime" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "06/11/1995
+11:18AM"
+label_settings = ExtResource("2_jmtxr")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_oq1jb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="RecIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("4_u8xgx")
+
+[node name="RecTime" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00:00:00.000"
+label_settings = ExtResource("2_jmtxr")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("5_dodk3")
+
+[node name="InteractLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 16.48
+text = "OPEN"
+label_settings = SubResource("LabelSettings_rb3ss")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="InteractLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Subtitles" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -90.995
+offset_right = 150.0
+offset_bottom = -40.995
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 16.48
+text = "SINTO MUITO, MAS ESSA AREA E EXLUSIVA PARA FUNCIONARIOS"
+label_settings = SubResource("LabelSettings_rb3ss")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="Subtitles"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
+[node name="EndingCutscene" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="EndingCutscene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="EndingCutscene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACKROOMS
+1995"
+label_settings = SubResource("LabelSettings_wy6rs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="EndingCutscene"]
+unique_name_in_owner = true
+stream = ExtResource("7_0bql8")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtxyiyepwmp45"]
+
+[ext_resource type="PackedScene" uid="uid://cr1fhdnbnwvx5" path="res://meshes/guard.glb" id="1_klaj6"]
+
+[node name="guard" instance=ExtResource("1_klaj6")]
+
+[node name="Skeleton3D" parent="Armature" index="1"]
+bones/0/rotation = Quaternion(0.0270121, 1.36879e-33, 1.36879e-33, 0.999635)
+bones/1/rotation = Quaternion(-0.0167044, -8.55519e-34, -8.55043e-34, 0.99986)
+bones/2/rotation = Quaternion(0.00203287, 1.19209e-07, 2.42337e-10, 0.999998)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(-0.00707553, -0.00749886, -0.727299, 0.686243)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(-0.0834738, 0.0423894, -0.450789, 0.887707)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.0553408, 0.00261691, -0.0189854, 0.998284)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(-0.135312, -0.129723, 0.718329, 0.669975)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.166121, -0.0877046, 0.45857, 0.868577)
